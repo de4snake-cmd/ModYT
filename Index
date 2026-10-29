@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediaHub — Music & Video, All in One Place</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #0f0f0f;
+    color: #f1f1f1;
+  }
+  header {
+    background: #181818;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #2a2a2a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 {
+    font-size: 24px;
+    color: #ff0033;
+    letter-spacing: 1px;
+  }
+  nav a {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: #1db954; }
+
+  .hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+  }
+  .hero h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    color: #aaa;
+    font-size: 16px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #181818;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-5px); }
+
+  .card-header {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
+
+  .link-card {
+    padding: 25px;
+    text-align: center;
+  }
+  .link-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ff0033;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  .link-card a:hover { background: #cc0029; }
+
+  .youtube .card-header { background: #ff0033; color: white; }
+  .spotify .card-header { background: #1db954; color: black; }
+  .soundcloud .card-header { background: #ff5500; color: white; }
+  .apple .card-header { background: #fa233b; color: white; }
+  .deezer .card-header { background: #a238ff; color: white; }
+  .tidal .card-header { background: #000000; color: white; border: 1px solid #333; }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 13px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 MediaHub</h1>
+  <nav>
+    <a href="#youtube">YouTube</a>
+    <a href="#spotify">Spotify</a>
+    <a href="#soundcloud">SoundCloud</a>
+    <a href="#apple">Apple Music</a>
+    <a href="#more">More</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>All Your Media. One Clean Page.</h2>
+  <p>No ads from us. Just direct links & embeds to your favorite platforms.</p>
+</section>
+
+<div class="grid">
+
+  <!-- YOUTUBE -->
+  <div class="card youtube" id="youtube">
+    <div class="card-header">▶ YouTube</div>
+    <iframe height="200"
+      src="https://www.youtube.com/embed?listType=user_uploads"
+      allowfullscreen>
+    </iframe>
+    <div class="link-card">
+      <a href="https://www.youtube.com" target="_blank">Open YouTube</a>
+    </div>
+  </div>
+
+  <!-- SPOTIFY -->
+  <div class="card spotify" id="spotify">
+    <div class="card-header">🎧 Spotify</div>
+    <iframe height="152"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
+      allow="encrypted-media">
+    </iframe>
+    <div class="link-card">
+      <a href="https://open.spotify.com" target="_blank">Open Spotify</a>
+    </div>
+  </div>
+
+  <!-- SOUNDCLOUD -->
+  <div class="card soundcloud" id="soundcloud">
+    <div class="card-header">☁ SoundCloud</div>
+    <iframe height="166"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/discover">
+    </iframe>
+    <div class="link-card">
+      <a href="https://soundcloud.com" target="_blank">Open SoundCloud</a>
+    </div>
+  </div>
+
+  <!-- APPLE MUSIC -->
+  <div class="card apple link-card" id="apple">
+    <div class="card-header">🍎 Apple Music</div>
+    <p>Stream your favorite albums & playlists.</p>
+    <a href="https://music.apple.com" target="_blank">Open Apple Music</a>
+  </div>
+
+  <!-- DEEZER -->
+  <div class="card deezer link-card" id="more">
+    <div class="card-header">🎶 Deezer</div>
+    <p>Discover new music and curated playlists.</p>
+    <a href="https://www.deezer.com" target="_blank">Open Deezer</a>
+  </div>
+
+  <!-- TIDAL -->
+  <div class="card tidal link-card">
+    <div class="card-header">🌊 Tidal</div>
+    <p>High-fidelity audio streaming.</p>
+    <a href="https://tidal.com" target="_blank">Open Tidal</a>
+  </div>
+
+</div>
+
+<footer>
+  Built with ❤ — MediaHub links directly to official platforms. No ads, no tracking.
+</footer>
+
+</body>
+</html>
